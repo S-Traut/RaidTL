@@ -1,0 +1,26 @@
+@import "$/scss/_vars";
+
+.content {
+    position: relative;
+    height: calc(100% - 75px);
+}
+
+.action {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    background-color: $c_dark_mute;
+    z-index: 1;
+    width: 100px;
+    height: 20px;
+}
+
+.action > p {
+    font-size: 8rem;
+}
+
+.action > img {
+    width: 20px;
+    height: 20px;
+}

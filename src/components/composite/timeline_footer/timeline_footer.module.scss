@@ -1,0 +1,33 @@
+@import "$/scss/_vars";
+
+.footer {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: 0;
+    height: 50px;
+}
+
+.time {
+    box-sizing: border-box;
+    padding: 5px;
+    width: 120px;
+    background-color: $c_dark_mute;
+    color: $c_light;
+    font-size: 24rem;
+}
+
+.seconds {
+    font-size: 16rem;
+}
+
+.timestamp {
+    color: $c_primary;
+    font-weight: 600;
+    text-align: left;
+}
+
+.timebar {
+    flex-grow: 1;
+    background-color: $c_dark;
+}

@@ -1,0 +1,40 @@
+@import "$/scss/_vars";
+
+.event {
+    cursor: pointer;
+    user-select: none;
+    transition: 150ms cubic-bezier(0.19, 1, 0.22, 1);
+    position: absolute;
+    outline: $c_primary 1px solid;
+    height: 18px;
+    border-radius: 5px;
+}
+
+.active {
+    transition: 600ms cubic-bezier(0.19, 1, 0.22, 1);
+    background-color: $c_primary;
+    height: 18px;
+    border-radius: 5px;
+}
+
+.overlaps {
+    transition: 600ms cubic-bezier(0.19, 1, 0.22, 1);
+    background-color: rgba($c_danger, 0.1) !important;
+    outline: $c_danger 1px solid !important;
+}
+
+.overlaps > .active {
+    transition: 150ms cubic-bezier(0.19, 1, 0.22, 1);
+    background-color: rgba($c_danger, 0.4) !important;
+}
+
+.drag {
+    transition: 150ms cubic-bezier(0.19, 1, 0.22, 1);
+    background-color: rgba($c_info, 0.1);
+    outline: $c_info 1px solid;
+}
+
+.drag > .active {
+    transition: 150ms cubic-bezier(0.19, 1, 0.22, 1);
+    background-color: rgba($c_primary, 0.4);
+}

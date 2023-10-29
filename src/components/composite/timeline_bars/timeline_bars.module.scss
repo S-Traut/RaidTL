@@ -1,0 +1,11 @@
+@import "$/scss/_vars.scss";
+
+.bar {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-left: 1px solid $c_dark_mute;
+    border-right: 1px solid $c_dark_mute;
+    z-index: -10;
+}
