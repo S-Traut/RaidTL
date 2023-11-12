@@ -8,6 +8,7 @@ $c_danger: #d14343;
 $c_light: #f3f3f3;
 $c_dark: #0c0e0d;
 $c_dark_mute: #1b2020;
+$c_dark_lite: #404040; 
 
 // BREAKPOINTS //
 $s_sm: 640px;
@@ -15,3 +16,5 @@ $s_md: 768px;
 $s_lg: 1024px;
 $s_xl: 1280px;
 $s_2xl: 1536px;
+
+$transition: 150ms cubic-bezier(0.19, 1, 0.22, 1);

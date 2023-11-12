@@ -58,14 +58,14 @@ export const zoom = () => store.get_zoom() * store.zoom_factor;
 export const tick_zoom = () => store.get_tick() * zoom();
 
 export function event_position(ms: number) {
-  return (ms - store.get_time()) * zoom() + 100;
+  return (ms - store.get_time()) * zoom() + store.get_sidebar_width();
 }
 
 /**
  * Convert a pixel X positon to milliseconds on the timeline
  */
 export function px_to_ms(px: number) {
-  const position = (px - store.get_sidebar_width()) * 100;
+  const position = (px - store.get_sidebar_width()) * (1 / store.zoom_factor);
   return position / store.get_zoom() + store.get_time();
 }
 
@@ -74,8 +74,3 @@ export function snap(value: number, snap: number) {
 }
 
 export const bar_width = () => store.get_tick() * zoom();
-export function bar_count() {
-  return Math.floor((window.innerWidth - 100) / (bar_width() * 2)) + 1;
-}
-
-export function bar_position() {}

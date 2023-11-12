@@ -4,6 +4,7 @@ import { next_tick, prev_tick } from "@/services/service_timeline";
 import CompositeTimelineHeader from "@/components/composite/timeline_header";
 import CompositeTimelineContent from "@/components/composite/timeline_content";
 import CompositeTimelineFooter from "@/components/composite/timeline_footer";
+import CompositeTimelineRaid from "../timeline_raid";
 
 const CompositeTimeline: Component = () => {
   document.addEventListener("wheel", handleScroll);
@@ -22,6 +23,7 @@ const CompositeTimeline: Component = () => {
   return (
     <div class={styles.timeline}>
       <CompositeTimelineHeader />
+      <CompositeTimelineRaid />
       <CompositeTimelineContent />
       <CompositeTimelineFooter />
     </div>

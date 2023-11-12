@@ -1,0 +1,41 @@
+@import "$/scss/_vars";
+
+.raid {
+    position: relative;
+    height: 50px;
+    width: 100vw;
+    border-bottom: 5px solid $c_dark_mute;
+    box-sizing: border-box;
+}
+
+.action {
+    transition: $transition;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 1px white solid;
+    cursor: pointer;
+}
+
+.action:hover {
+    transition: $transition;
+    background-color: white;
+}
+
+.action:hover > p {
+    transition: $transition;
+    opacity: 1;
+    bottom: 100%;
+}
+
+.action > p {
+    transition: $transition;
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    left: 50%;
+    pointer-events: none;
+    white-space: nowrap;
+}

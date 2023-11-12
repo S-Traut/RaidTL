@@ -3,7 +3,12 @@ html {
     color: $c_light;
 }
 
-h1, h2, h3, h4, h5 {
+h1 {
     font-size: 24rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 16rem;
     font-weight: 600;
 }

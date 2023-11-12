@@ -2,7 +2,10 @@
 
 .content {
     position: relative;
-    height: calc(100% - 75px);
+
+    // 125px is equal to the size of the footer + raid events
+    height: calc(100% - 125px);
+
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -14,7 +17,7 @@
     align-items: center;
     background-color: $c_dark_mute;
     z-index: 1;
-    width: 100px;
+    width: 150px;
     height: 40px;
 }
 
