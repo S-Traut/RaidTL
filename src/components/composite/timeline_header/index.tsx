@@ -1,18 +1,12 @@
 import { Component, createSignal } from "solid-js";
 import styles from "./timeline_header.module.scss";
 import CommonModal from "@/components/common/modal";
+import { parse_fflog_url, process_fflog_url } from "@/services/service_fflogs";
 
 const CompositeTimelineFooter: Component = () => {
-  const [import_modal, set_import_modal] = createSignal(false);
-
-  function import_fflogs(url: string) {
-    console.log(url);
-    set_import_modal(false);
-  }
-
   return (
     <div class={styles.header}>
-      <PrivateModalImport open={import_modal()} on_import={import_fflogs} />
+      <PrivateModalImport />
       <h1>RaidTL</h1>
       <div class={styles.menu}>
         <button onClick={() => set_import_modal(true)}>
@@ -24,25 +18,18 @@ const CompositeTimelineFooter: Component = () => {
   );
 };
 
-interface ImportCallback {
-  (url: string): void;
-}
-
-interface ModalProps {
-  open: boolean;
-  on_import: ImportCallback;
-}
-
-const PrivateModalImport: Component<ModalProps> = (props) => {
+export const [import_modal, set_import_modal] = createSignal(false);
+const PrivateModalImport: Component = () => {
   const [url, setUrl] = createSignal("");
 
   function import_logs(event: Event) {
     event.preventDefault();
-    props.on_import(url());
+    process_fflog_url(url())
+    set_import_modal(false);
   }
 
   return (
-    <CommonModal open={props.open}>
+    <CommonModal open={import_modal()} click_outside={() => set_import_modal(false)}>
       <h2>Enter an FFLogs fight URL</h2>
       <form onSubmit={import_logs}>
         <input
