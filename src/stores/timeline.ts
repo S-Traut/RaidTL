@@ -28,3 +28,6 @@ export const [get_actions, set_actions] = createStore<Action[]>([
     active: 3000,
   },
 ]);
+export const zoom_factor = 0.01;
+export const line_height = 40;
+export const [get_sidebar_width, set_sidebar_width] = createSignal(100);

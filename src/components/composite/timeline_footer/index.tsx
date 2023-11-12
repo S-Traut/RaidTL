@@ -7,7 +7,7 @@ const CompositeTimelineFooter: Component = () => {
   return (
     <div class={styles.footer}>
       <div class={styles.time}>
-        <p class={styles.seconds}>{timeline.getTimestamp()}</p>
+        <p class={styles.seconds}>{timeline.get_timestamp()}</p>
         <p class={styles.timestamp}>{get_time()}</p>
       </div>
       <button onclick={timeline.increase_zoom}>+</button>

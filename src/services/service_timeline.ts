@@ -34,7 +34,7 @@ export function update_event(
   );
 }
 
-export function getTimestamp(): string {
+export function get_timestamp(): string {
   let timestamp = store.get_time();
   const isNegative = timestamp < 0;
   timestamp = Math.abs(timestamp);
@@ -52,3 +52,30 @@ export function getTimestamp(): string {
     `${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`
   );
 }
+
+// CALCULATIONS //
+export const zoom = () => store.get_zoom() * store.zoom_factor;
+export const tick_zoom = () => store.get_tick() * zoom();
+
+export function event_position(ms: number) {
+  return (ms - store.get_time()) * zoom() + 100;
+}
+
+/**
+ * Convert a pixel X positon to milliseconds on the timeline
+ */
+export function px_to_ms(px: number) {
+  const position = (px - store.get_sidebar_width()) * 100;
+  return position / store.get_zoom() + store.get_time();
+}
+
+export function snap(value: number, snap: number) {
+  return (Math.round(value) / snap) * snap;
+}
+
+export const bar_width = () => store.get_tick() * zoom();
+export function bar_count() {
+  return Math.floor((window.innerWidth - 100) / (bar_width() * 2)) + 1;
+}
+
+export function bar_position() {}

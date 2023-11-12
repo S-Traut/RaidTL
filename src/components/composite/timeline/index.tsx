@@ -13,6 +13,7 @@ const CompositeTimeline: Component = () => {
   });
 
   function handleScroll(event: WheelEvent) {
+    if (!event.shiftKey) return;
     if (event.deltaY > 0) {
       next_tick();
     } else prev_tick();
