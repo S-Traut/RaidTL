@@ -1,7 +1,7 @@
 import { Component, createSignal } from "solid-js";
 import styles from "./timeline_header.module.scss";
 import CommonModal from "@/components/common/modal";
-import { parse_fflog_url, process_fflog_url } from "@/services/service_fflogs";
+import { process_fflog_url } from "@/services/service_fflogs";
 
 const CompositeTimelineFooter: Component = () => {
   return (

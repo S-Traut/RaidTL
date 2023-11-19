@@ -11,17 +11,17 @@
 .action {
     transition: $transition;
     position: absolute;
-    width: 16px;
-    height: 16px;
-    bottom: 5px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    border: 1px white solid;
+    border: 1px $c_light solid;
+    bottom: 0;
     cursor: pointer;
 }
 
 .action:hover {
     transition: $transition;
-    background-color: white;
+    background-color: $c_light;
 }
 
 .action:hover > p {

@@ -19,7 +19,7 @@ const CompositeTimelineRaid: Component = () => {
 
 const PrivateRaidAction: RaidActionComponent = (props) => {
   function position() {
-    return event_position(props.action.timestamp) - 8;
+    return event_position(props.action.timestamp) - 10;
   }
 
   return (

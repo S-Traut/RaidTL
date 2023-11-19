@@ -4,13 +4,13 @@ import { Component, lazy } from "solid-js";
 import { Route, Router, Routes } from "@solidjs/router";
 import "$/scss/main.scss";
 
-const home = lazy(() => import("@/views/home"));
+const timeline = lazy(() => import("@/views/timeline"));
 
 const Application: Component = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" component={home} />
+        <Route path="/tl/:id?" component={timeline} />
       </Routes>
     </Router>
   );

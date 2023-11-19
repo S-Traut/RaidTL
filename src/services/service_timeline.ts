@@ -1,5 +1,6 @@
 import * as store from "@/stores/timeline";
 import { produce } from "solid-js/store";
+import { get_socket } from "./service_socket";
 
 export function next_tick() {
   store.set_time(store.get_time() + store.get_tick());
@@ -28,10 +29,16 @@ export function update_event(
   event_index: number,
   ms: number
 ) {
+  const socket = get_socket();
+
   store.set_actions(
     (_, i) => i === action_index,
     produce((action) => (action.events[event_index] = ms))
   );
+  
+  if(socket) {
+    socket.send_event_move(action_index, event_index, ms);
+  }
 }
 
 export function get_timestamp(): string {
